@@ -47,7 +47,10 @@ console.log(process.env.DATABASE_URL ? true : false);
       username: process.env.DB_USERNAME || 'postgres',
       password: process.env.DB_PASSWORD || 'postgres',
       database: process.env.DB_DATABASE|| 'vinyls',
-      ssl: process.env.DATABASE_URL ? true : false,
+      // ssl: process.env.DATABASE_URL ? true : false,
+      ssl: {
+        rejectUnauthorized: false
+      },
       entities: [Album, CollectorAlbum, Band, Collector, Comment, Musician, Performer, PerformerPrize, Prize, Track,],
       dropSchema: false,
       synchronize: true,
