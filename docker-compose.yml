@@ -17,6 +17,7 @@ services:
     networks:
       - default
 
+
   db:
     image: postgres
     environment:
